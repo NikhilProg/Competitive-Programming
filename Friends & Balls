@@ -1,0 +1,38 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n,m,l,r,q,que;
+    cin>>n;
+    cin>>m;
+    int arr[n];
+    for(int i=0 ; i<n ; i++){
+        arr[i]=0;
+    }
+
+    for(int i=0 ; i<m ; i++){
+        cin>>l>>r;
+        for(int j=l-1 ; j<r ; j++){
+            arr[j]=arr[j]+1;
+        }
+    }
+
+    cin>>q;
+    for(int i=0 ; i<q ; i++){
+        int count=0;
+        cin>>que;
+        for(int j=0 ; j<n ; j++){
+            if(arr[j]>=que){
+                count++;
+            }
+        }
+        cout<<count<<"\n";
+    }
+    return 0;
+}
+
