@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt(),p,ans,found,i,j,k;
+        int [] h=new int[100];
+        for(i=0 ; i<=t-1 ; i++){
+            int N=sc.nextInt();
+            p=sc.nextInt();
+        for(j=0 ; j<=p-1 ; j++){
+            h[j]=sc.nextInt();
+        }
+        ans=0;
+        for(k=1 ; k<=N ; k++){
+             if(k%7==6||k%7==0){
+                    continue;
+                }
+                found=0;
+            for(j=0 ; j<=p-1 ; j++){
+                if(k%h[j]==0){
+                        found++;
+                    }
+                }
+            if(found!=0){
+                    ans++;
+                }
+             }
+                  System.out.println(ans);
+            }
+          
+        }
+        }
+    
