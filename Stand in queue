@@ -1,0 +1,33 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+typedef long long l1;
+
+int main() {
+    l1 t;
+    cin>>t;
+    while(t--){
+        l1 n;
+        cin>>n;
+        vector<l1> a(n),b;
+        for(l1 i=0 ; i<n ; i++) cin>>a[i];
+        for(l1 i=1 ; i<n ; i++){
+            b.push_back(abs(a[i]-a[i-1]));
+        }
+        bool flag1=true,flag2=true;
+        for(l1 i=1 ; i<n-2 ; i++){
+            if(b[i]!=b[i-1]+1) flag1=false;
+            if(b[i]!=b[i-1]-1) flag2=false;
+        }
+        if(flag1||flag2){
+            cout<<"Correct Formation\n";
+        }
+        else{
+            cout<<"Incorrect Formation\n";
+        }
+    }
+    return 0;
+}
