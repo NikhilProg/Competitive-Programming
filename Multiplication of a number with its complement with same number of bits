@@ -1,0 +1,29 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+typedef long long l1;
+
+int main() {
+    l1 t;
+    cin>>t;
+    while(t--){
+        l1 n;
+        cin>>n;
+        l1 t=n;
+        l1 sec=0;
+        l1 curr=0;
+        while(t){
+            if(n&(1<<curr)){
+                
+            }
+            else sec+=(1<<curr);
+            curr++;
+            t>>=1;
+        }
+        cout<<sec*n<<"\n";
+    }
+    return 0;
+}
