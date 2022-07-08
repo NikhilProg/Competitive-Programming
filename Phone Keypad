@@ -1,0 +1,37 @@
+# Competitive-Programming
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class PhoneKeypadRecursion {
+    public static void solve(String str,int index,StringBuilder output,ArrayList<String>ans,String [] keypad){
+        if(index>=str.length()){
+            ans.add(output.toString());
+            return;
+        }
+        int number=str.charAt(index)-'0';
+        String value=keypad[number];
+        for(int i = 0; i<value.length() ; i++){
+            output.append(value.charAt(i));
+            solve(str,index+1,output,ans,keypad);
+            output.deleteCharAt(output.length()-1);
+        }
+    }
+    public static ArrayList<String> phoneKeypad(String str,String[] keypad){
+        ArrayList<String>ans=new ArrayList<>();
+        StringBuilder output=new StringBuilder();
+        if(str.length()==0){
+            return ans;
+        }
+        int index=0;
+        solve(str,index,output,ans,keypad);
+        return ans;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String str=sc.next();
+        String [] keypad={"", "","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+        System.out.println(phoneKeypad(str,keypad));
+    }
+}
